@@ -56,7 +56,7 @@ INVERTE_MOTOR:
 
 CONTAGEM:
 	MOV A, TL1 ; Lê o contador de voltas atual 
-	MOVC A, @A+DPTR ; Busca o padrão no display (CP1) [cite: 72, 74]
+	MOVC A, @A+DPTR ; Busca o padrão no display (CP1)
 	MOV P1, A ; Atualiza o display de 7 segmentos
 	RET
 	
