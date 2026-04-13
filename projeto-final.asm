@@ -67,9 +67,3 @@ CONTAGEM:
 	MOV ACC.7, C ; Move o valor do carry para o bit 7 do acumulador, correspondente ao ponto decimal do display.
 	MOV P1, A ; Atualiza o display de 7 segmentos
 	RET
-
-
-	
-
-
-
