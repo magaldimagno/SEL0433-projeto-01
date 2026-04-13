@@ -1,5 +1,5 @@
 ; SEL0433 - Aplicacao de Microprocessadores
-; Projeto 01 - Checkpoint 03
+; Projeto 01 - Entrega Final
 ; Alexandre Augusto Novarino Britto - 14754672
 ; Eduardo Magaldi Magno - 15448780
 
