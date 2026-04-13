@@ -34,12 +34,12 @@ VERIFICA_CHAVE:
 	JB F0, ESTADO_ATUAL_UM ; Se F0 for 1, desvia para a logica correspondente
 
 ESTADO_ATUAL_ZERO:
-	; F0 != 0. Checa se a chave P2.7 indica um estado diferente (1)
+	; F0 = 0. Checa se a chave P2.7 indica um estado diferente (1)
 	JB P2.7, CHAMA_MUDANCA ; Se a chave for 1, desvia para alterar o sentido
 	RET ; Se a chave for 0, retorna ao laco principal
 
 ESTADO_ATUAL_UM:
-    ; F0 != 1. Checa se a chave P2.7 indica um estado diferente (0)
+    ; F0 = 1. Checa se a chave P2.7 indica um estado diferente (0)
     JNB P2.7, CHAMA_MUDANCA ; Se a chave for 0, desvia para alterar o sentido
     RET ; Se a chave for 1, retorna ao laco principal
 
