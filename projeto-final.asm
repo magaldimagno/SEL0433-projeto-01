@@ -23,14 +23,14 @@ INICIO:
 	MOV TH1, #0F6h 
 	MOV TL1, #0F6h
 	; Definicao do estado padrao do motor
-	SETB F0	 ; Inicia a variavel de estado (F0) em nivel logico alto, para ser condizente com o estado inicial das chaves
+	SETB F0	 ; Inicia a variavel de estado (F0) em nivel logico alto, para ser condizente com o estado inicial da chave
 	; Estado inicial do motor no sentido horario:
  	SETB P3.0 ; Coloca o pino P3.0 em nivel alto
  	CLR P3.1 ; Coloca o pino P3.1 em nivel baixo
 
 LEITURA:
 	CALL VERIFICA_CHAVE ; Chama a sub-rotina para ler a chave de direcao
-	CALL CONTAGEM ; Processamento da Contagem
+	CALL CONTAGEM ; Processamento da contagem de voltas
 	SJMP LEITURA
 
 VERIFICA_CHAVE:
@@ -52,11 +52,11 @@ CHAMA_MUDANCA:
 
 INVERTE_MOTOR: 
     ; Executa a mudanca de direcao alternando os niveis logicos
-    CPL F0 ; Inverte a variavel de estado do motor
-    CPL P3.0 ; Inverte o acionamento do pino P3.0
-    CPL P3.1 ; Inverte o acionamento do pino P3.1
+   	CPL F0 ; Inverte a variavel de estado do motor
+   	CPL P3.0 ; Inverte o acionamento do pino P3.0
+	CPL P3.1 ; Inverte o acionamento do pino P3.1
 	MOV TL1, #0F6h ; Reseta o contador para contar as voltas no estado atual do motor. O valor é o mesmo de 246, para ajustar o overflow a sequencia de 0 a 9.
-    RET
+	RET
 
 CONTAGEM:
 	MOV A, TL1 ; Le o contador de voltas atual 
